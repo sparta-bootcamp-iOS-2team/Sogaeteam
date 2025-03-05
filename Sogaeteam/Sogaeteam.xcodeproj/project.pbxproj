@@ -13,6 +13,10 @@
 		958EF7CD2D76889500835231 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 958EF7CC2D76889500835231 /* Base */; };
 		958EF7CF2D76889600835231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 958EF7CE2D76889600835231 /* Assets.xcassets */; };
 		958EF7D22D76889600835231 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 958EF7D12D76889600835231 /* Base */; };
+		9BC5515A2D7827FE0025F2E2 /* MatchingListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC551582D7827FE0025F2E2 /* MatchingListCollectionViewCell.swift */; };
+		9BC5515B2D7827FE0025F2E2 /* MatchingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC551592D7827FE0025F2E2 /* MatchingListViewController.swift */; };
+		9BC5515C2D7827FE0025F2E2 /* Matching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC551572D7827FE0025F2E2 /* Matching.swift */; };
+		9BC5515E2D7828360025F2E2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC5515D2D7828360025F2E2 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		958EF7CE2D76889600835231 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		958EF7D12D76889600835231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		958EF7D32D76889600835231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BC551572D7827FE0025F2E2 /* Matching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matching.swift; sourceTree = "<group>"; };
+		9BC551582D7827FE0025F2E2 /* MatchingListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingListCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BC551592D7827FE0025F2E2 /* MatchingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingListViewController.swift; sourceTree = "<group>"; };
+		9BC5515D2D7828360025F2E2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				958EF7CE2D76889600835231 /* Assets.xcassets */,
 				958EF7D02D76889600835231 /* LaunchScreen.storyboard */,
 				958EF7D32D76889600835231 /* Info.plist */,
+				9BC551572D7827FE0025F2E2 /* Matching.swift */,
+				9BC551582D7827FE0025F2E2 /* MatchingListCollectionViewCell.swift */,
+				9BC551592D7827FE0025F2E2 /* MatchingListViewController.swift */,
+				9BC5515D2D7828360025F2E2 /* UIColor.swift */,
 			);
 			path = Sogaeteam;
 			sourceTree = "<group>";
@@ -139,8 +151,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				958EF7CA2D76889500835231 /* ViewController.swift in Sources */,
+				9BC5515E2D7828360025F2E2 /* UIColor.swift in Sources */,
 				958EF7C62D76889500835231 /* AppDelegate.swift in Sources */,
 				958EF7C82D76889500835231 /* SceneDelegate.swift in Sources */,
+				9BC5515A2D7827FE0025F2E2 /* MatchingListCollectionViewCell.swift in Sources */,
+				9BC5515B2D7827FE0025F2E2 /* MatchingListViewController.swift in Sources */,
+				9BC5515C2D7827FE0025F2E2 /* Matching.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
