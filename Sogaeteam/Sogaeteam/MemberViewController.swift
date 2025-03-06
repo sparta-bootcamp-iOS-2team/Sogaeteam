@@ -21,9 +21,9 @@ class MemberViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     let teamMembers: [TeamMember] = [
-        TeamMember(name: "송규섭", mbti: "ISFJ", comment: "리드하는 사람이에요", imageName: "profile1"),
-        TeamMember(name: "이다성", mbti: "ENTJ", comment: "아이디어가 많아요", imageName: "profile2"),
-        TeamMember(name: "명노훈", mbti: "INTP", comment: "중요한 결정을 잘해요", imageName: "profile3")
+        TeamMember(name: "송규섭", mbti: "ISFJ", comment: "리드하는 사람이에요", imageName: "DS"),
+        TeamMember(name: "이다성", mbti: "ENTJ", comment: "아이디어가 많아요", imageName: "KS"),
+        TeamMember(name: "명노훈", mbti: "INTP", comment: "중요한 결정을 잘해요", imageName: "NH")
     ]
 
     override func viewDidLoad() {
