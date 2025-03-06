@@ -76,16 +76,6 @@ func buttonColorChange(_ sender: UIButton, color: String) {
     sender.tintColor = UIColor(hexCode: color)
 }
 
-
-// 타이틀 라벨 폰트 조절
-extension String {
-    func nsRange(of substring: String) -> NSRange? {
-        guard let range = self.range(of: substring) else { return nil }
-        return NSRange(range, in: self)
-    }
-}
-
-
 // 컬렉션 뷰 셀 코드 연결
 extension MatchingListViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
