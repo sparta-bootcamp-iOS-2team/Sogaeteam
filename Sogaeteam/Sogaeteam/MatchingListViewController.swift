@@ -53,6 +53,28 @@ class MatchingListViewController: UIViewController {
         
         // 버튼 색상 변경
         buttonColorChange(matchingButton, color: "FFD371")
+        
+        matchingButton.addTarget(self, action: #selector(didTapMatchingButton), for: .touchUpInside)
+        
+        setupCustomBackButton()
+    }
+    
+    private func setupCustomBackButton() {
+        // 백버튼 이미지 설정
+        let backButtonImage = UIImage(systemName: "chevron.left")
+        navigationController?.navigationBar.backIndicatorImage = backButtonImage
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
+        
+        // 타이틀 제거 (백버튼 옆의 텍스트 없애기)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        // 네비게이션 바 타이틀 색상 및 폰트 설정
+        navigationController?.navigationBar.tintColor = UIColor(hexCode: "403524") // 백버튼 색상
+        
+        // 네비게이션 바 투명하게 설정 (선택사항)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +89,11 @@ class MatchingListViewController: UIViewController {
             
             // ✅ 네비게이션 바 다시 보이기 (다른 뷰로 이동할 때)
             self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    @objc private func didTapMatchingButton() {
+        let vc = ProfileViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
