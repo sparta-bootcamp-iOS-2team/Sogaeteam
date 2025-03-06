@@ -70,6 +70,7 @@ class MatchingListViewController: UIViewController {
         
         // 네비게이션 바 타이틀 색상 및 폰트 설정
         navigationController?.navigationBar.tintColor = UIColor(hexCode: "403524") // 백버튼 색상
+        navigationController?.navigationBar.backgroundColor = UIColor(hexCode: "fffaf7")
         
         // 네비게이션 바 투명하게 설정 (선택사항)
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -92,8 +93,13 @@ class MatchingListViewController: UIViewController {
     }
     
     @objc private func didTapMatchingButton() {
-        let vc = ProfileViewController()
+        // 올바른 스토리보드 이름과 ID 사용
+        let storyboard = UIStoryboard(name: "TeamMemberList", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TeamMemberList")
+        
         self.navigationController?.pushViewController(vc, animated: true)
+        
+        self.matchingCollectionView.reloadData()
     }
 }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -25,23 +25,24 @@
                                     <constraint firstAttribute="height" constant="128" id="KFu-MF-aGZ"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BJ6-9d-b6j">
-                                    <size key="itemSize" width="127" height="127"/>
+                                    <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResultCollectionViewCell" id="uaX-Xs-8T1" customClass="ResultCollectionViewCell" customModule="Sogaeteam" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="127" height="127"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="djc-W0-h1s">
-                                            <rect key="frame" x="0.0" y="0.0" width="127" height="127"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jLB-5D-1bo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="127" height="127"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="jLB-5D-1bo" secondAttribute="height" multiplier="1:1" id="BD6-yd-i95"/>
+                                                        <constraint firstAttribute="height" constant="90" id="Mb1-6C-2QI"/>
+                                                        <constraint firstAttribute="width" constant="90" id="hBI-cw-3be"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -52,7 +53,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="jLB-5D-1bo" secondAttribute="trailing" id="nKK-ih-cyH"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="127" height="127"/>
+                                        <size key="customSize" width="90" height="90"/>
                                         <connections>
                                             <outlet property="resultImage" destination="jLB-5D-1bo" id="vdw-sI-m6n"/>
                                         </connections>

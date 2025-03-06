@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ResultViewController: UIViewController {
     @IBOutlet weak var resultCollectionView: UICollectionView!
@@ -35,8 +36,6 @@ class ResultViewController: UIViewController {
         // 오토레이아웃으로 셀 내 이미지뷰가 중앙정렬이 안되서 코드로 억지로 중앙정렬 시킴
         resultCollectionView.contentInset = UIEdgeInsets(top:0, left: 10, bottom: 0, right: 10)
 
-        
-        
         // 라벨 글씨 굵게
         teamGoalLabel.setAttributedText(fullText: "2팀은,\n완주가 목표에요!\n즐거운 만남을 추구해요!\n건강한 소통을 중시해요!", boldTexts: [
                 ("2팀", UIFont.boldSystemFont(ofSize: 18)),
@@ -64,6 +63,16 @@ class ResultViewController: UIViewController {
         
         // 버튼 배경색 지정
         buttonColorChange(resultButton, color: "FFD371")
+        
+        resultButton.addTarget(self, action: #selector(didTapResultButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapResultButton() {
+        let safariVC = SFSafariViewController(url: URL(string: "https://github.com/sparta-bootcamp-iOS-2team/Sogaeteam")!)
+        
+        self.present(safariVC, animated: true)
+        
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 
@@ -86,8 +95,8 @@ extension ResultViewController: UICollectionViewDataSource {
 extension ResultViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let interItemSpacing: CGFloat = 10
-        let padding: CGFloat = 10 // contentInset 수치에 맞춰서 넣어줌
+        let interItemSpacing: CGFloat = 20
+        let padding: CGFloat = 20 // contentInset 수치에 맞춰서 넣어줌
 
         let width = (collectionView.bounds.width - interItemSpacing * 2 - padding * 2) / 3 // 셀이 3개가 나란히 출력하기 위해 너비 값 설정
 
@@ -101,10 +110,7 @@ extension ResultViewController: UICollectionViewDelegateFlowLayout {
         return 10
     }
 
-    // collectionView에서는 연속되는 열 사이의 최소 간격
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return .zero
-//    }
+
 }
 
 
