@@ -30,7 +30,7 @@ class TableCell: UITableViewCell {
         return containerView.point(inside: convertedPoint, with: event) ? containerView : nil
     }
 
-    func configure(with member: MemberViewController.TeamMember) {
+    func configure(with member: TeamMember) {
         nameLabel.text = member.name
         mbtiLabel.text = member.mbti
         commentLabel.text = member.comment

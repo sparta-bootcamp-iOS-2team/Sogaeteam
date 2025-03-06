@@ -68,9 +68,6 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="baseForegroundColor" red="0.25098039220000001" green="0.20784313730000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="GzQ-WW-GAL" kind="show" id="Fkd-mz-0Vx"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -103,7 +100,7 @@
         <!--Navigation Controller-->
         <scene sceneID="I7C-4f-gCD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PnW-VB-Bky" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TestNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="PnW-VB-Bky" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="leg-F4-0NF">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -121,16 +118,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOB-Fp-oeU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20" y="-28.335832083958024"/>
-        </scene>
-        <!--MemberViewController-->
-        <scene sceneID="S4h-bT-m8c">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MemberViewController" storyboardName="TeamMemberList" referencedIdentifier="MemberViewController" id="GzQ-WW-GAL" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="nTY-7t-Bud"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E3Q-dL-ENL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1590" y="-81"/>
         </scene>
     </scenes>
     <resources>

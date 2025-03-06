@@ -10,7 +10,7 @@ import UIKit
 
 class ImageSliderViewController: UIViewController {
 
-    private let images: [UIImage] = [
+    private var images: [UIImage] = [
         UIImage(named: "DS")!,
         UIImage(named: "God")!,
         UIImage(named: "GodTwo")!,
@@ -91,8 +91,17 @@ class ImageSliderViewController: UIViewController {
         ])
     }
     
+    func configureMainImage(image: String) {
+        images[0] = UIImage(named: image)!
+    }
+    
     @objc private func didTapResultButton() {
         print("result 버튼 탭!!")
+        
+        let storyboard = UIStoryboard(name: "Result", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Result") as! ResultViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

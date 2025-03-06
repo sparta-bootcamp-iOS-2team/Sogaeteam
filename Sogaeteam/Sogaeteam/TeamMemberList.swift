@@ -6,42 +6,54 @@
 //
 
 import UIKit
+import SafariServices
 
 
-
-class MemberViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TeamMemberList: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
 
-    struct TeamMember {
-        let name: String
-        let mbti: String
-        let comment: String
-        let imageName: String
-    }
+    
 
-    let teamMembers: [TeamMember] = [
-        TeamMember(name: "송규섭", mbti: "ISFJ", comment: "리드하는 사람이에요", imageName: "profile1"),
-        TeamMember(name: "이다성", mbti: "ENTJ", comment: "아이디어가 많아요", imageName: "profile2"),
-        TeamMember(name: "명노훈", mbti: "INTP", comment: "중요한 결정을 잘해요", imageName: "profile3")
-    ]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none // 구분선 제거
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 140
         tableView.backgroundColor = UIColor(hexCode: "#FFFAF7")
+        
+        setupCustomBackButton()
+    }
+    
+    private func setupCustomBackButton() {
+        // 백버튼 이미지 설정
+        let backButtonImage = UIImage(systemName: "chevron.left")
+        navigationController?.navigationBar.backIndicatorImage = backButtonImage
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
+        
+        // 타이틀 제거 (백버튼 옆의 텍스트 없애기)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        // 네비게이션 바 타이틀 색상 및 폰트 설정
+        navigationController?.navigationBar.tintColor = UIColor(hexCode: "403524") // 백버튼 색상
+        
+        // 네비게이션 바 투명하게 설정 (선택사항)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return teamMembers.count + 1
+        return UserManager.shared.teamMembers.count + 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == teamMembers.count { // 마지막 row에 광고를 배치
+        if indexPath.row == UserManager.shared.teamMembers.count { // 마지막 row에 광고를 배치
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdCell", for: indexPath) as! AdCell
             cell.configureAd()
 
@@ -51,7 +63,7 @@ class MemberViewController: UIViewController, UITableViewDataSource, UITableView
 
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! TableCell
-            let member = teamMembers[indexPath.row]
+            let member = UserManager.shared.teamMembers[indexPath.row]
             cell.configure(with: member)
 
             cell.nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
@@ -65,8 +77,23 @@ class MemberViewController: UIViewController, UITableViewDataSource, UITableView
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected Row: \(indexPath.row)")
-        // 다음 셀에서 사용할 이름 데이터만 넘겨주는거로 추가 (함수로 넘겨주는게 좋긴함)
-
+        
+        if indexPath.row == UserManager.shared.teamMembers.count {
+            let vc = SFSafariViewController(url: URL(string: "https://nbcamp.spartacodingclub.kr/")!)
+            self.present(vc, animated: true)
+        } else {
+            let storyboard = UIStoryboard(name: "MatchingDetail", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MatchingDetail") as! MatchingDetail
+            var tailString = ""
+            
+            vc.user = UserManager.shared.teamMembers[indexPath.row]
+            
+            
+            print(self.navigationController)
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
 
 

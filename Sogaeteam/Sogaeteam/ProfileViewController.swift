@@ -166,14 +166,7 @@ class ProfileViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         
-        // 태그 생성
-        let tags = ["ENTJ", "사진", "여행", "기획"]
-        let tagColors: [UIColor] = [.systemGreen, .systemPurple, .systemBlue, .systemBlue]
         
-        for (index, tag) in tags.enumerated() {
-            let tagView = createTagView(text: tag, color: tagColors[index])
-            tagsStackView.addArrangedSubview(tagView)
-        }
         
         // 스크롤뷰 추가
         view.addSubview(scrollView)
@@ -309,5 +302,27 @@ class ProfileViewController: UIViewController {
         ])
         
         return container
+    }
+    
+    func configure(user: TeamMember) {
+        nameLabel.text = user.name
+        ageLabel.text = user.age
+        locationLabel.text = user.address
+        blogLabel.text = user.blogUrl
+        roleLabel.text = user.role
+        bloodTypeLabel.text = user.bloodType
+        
+        // 태그 생성
+        let tags = [user.mbti, user.hobby, user.strength[0], user.strength[1]]
+        let tagColors: [UIColor] = [.systemGreen, .systemPurple, .systemBlue, .systemBlue]
+        
+        for (index, tag) in tags.enumerated() {
+            let tagView = createTagView(text: tag, color: tagColors[index])
+            tagsStackView.addArrangedSubview(tagView)
+        }
+        
+        bioLabel.text = user.bio
+        
+        imageSliderVC.configureMainImage(image: user.imageName)
     }
 }
